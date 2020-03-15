@@ -1,28 +1,35 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <ion-app>
+      <ion-vue-router :animated="false"></ion-vue-router>
+      <Tabs/>
+    </ion-app>
   </div>
 </template>
 
-<script>
-import HelloWorld from './components/HelloWorld.vue'
 
+<script>
+import Tabs from "./components/Tabs.vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "app",
+  components: { Tabs }
+};
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+ion-navbar.toolbar.toolbar-ios.statusbar-padding,
+ion-navbar.toolbar-ios ion-title.title-ios,
+ion-toolbar.toolbar.toolbar-ios.statusbar-padding,
+ion-toolbar.toolbar-ios ion-title.title-ios {
+  padding-top: constant(safe-area-inset-top);
+  padding-top: env(safe-area-inset-top);
 }
 </style>
